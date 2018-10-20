@@ -1,6 +1,16 @@
 <h1>Create an article</h1>
 
-<%= form_for @article do |f| %>
+<% if @art.errors.any? %>
+  <!--<h2>Unable to save article due to the following errors:</h2>-->
+  <ul>
+  <% @art.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @art do |f| %>
 <p>
     <%= f.label :title  %>
     <br />
