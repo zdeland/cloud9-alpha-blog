@@ -1,7 +1,26 @@
 class ArticlesController < ApplicationController
+ 
+ def index 
+  @articles = Article.all
+ end 
+ 
  def new 
   @art = Article.new
  end 
+ 
+ def edit
+    @art = Article.find(params[:id])
+ end
+ 
+ def update
+    @art = Article.find(params[:id])
+    if @art.update(article_params)
+      flash[:notice] = "Article was successfully updated!"
+      redirect_to article_path(@art)
+   else
+      render 'edit' # renders edit template
+   end
+ end
  
  def create 
    #retrieve form filed values
