@@ -1,0 +1,33 @@
+.zach{color:#680000;font-size:58px;}
+
+$nav-default-bg: #680000;
+
+.page{
+    margin-left:50px;
+    margin-right:50px;
+}
+
+.jumbotron h1{
+    color:#000000;
+    font-weight:bold;
+}
+
+footer{
+    margin-top: 50px;
+    padding-top: 5px;
+    border-top: 1px solid #eaeaea;
+}
+
+footer small{
+    float:left;
+}
+
+footer ul{
+    float: right;
+    list-style:none;
+}
+
+footer ul li{
+    float: left;
+    margin-left:15px;
+}

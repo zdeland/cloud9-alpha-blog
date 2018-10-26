@@ -1,27 +1,30 @@
-<% if @art.errors.any? %>
-  <!--<h2>Unable to save article due to the following errors:</h2>
-  <ul>
-  <% @art.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-  </ul>
-<% end %>
+<%= render 'shared/errors',obj: @art  %>
 
-
-<%= form_for @art do |f| %>
-<p>
-    <%= f.label :title  %>
-    <br />
-    <%= f.text_field :title  %>
-</p>
-<p>
-    <%= f.label :description  %>
-    <br />
-    <%= f.text_area :description  %>
-</p>
-<p>
-    <%= f.submit %>
-</p>
-<%end%>
-
-<%= link_to "Back", articles_path %>
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for @art do |f| %>
+      <div class="form-group row">
+        <label for="title" class="col-sm-2 col-form-label"><%= f.label :title  %></label>
+        <div class="col-sm-5">
+          <%= f.text_field :title, class:"form-control", Placeholder: "Title of Article", autofocus:true  %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="title" class="col-sm-2 col-form-label"><%= f.label :description  %></label>
+        <div class="col-sm-5">
+          <%= f.text_area :description, rows: 10, class:"form-control", Placeholder: "Description of Article"  %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-2 offset-md-2">
+          <%= f.submit class:"btn btn-primary btn-lg", Placeholder: "Description of Article"  %>
+        </div>
+      </div>
+      
+    <%end%>
+    
+    <div class="col-xs-4 offset-md-4">
+      <%= link_to "Cancel and Return", articles_path %>
+    </div>
+  </div>
+</div>
