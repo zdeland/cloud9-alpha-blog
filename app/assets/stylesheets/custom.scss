@@ -7,9 +7,22 @@ $nav-default-bg: #680000;
     margin-right:50px;
 }
 
+.center{
+    text-align:center;
+}
+
 .jumbotron h1{
     color:#000000;
     font-weight:bold;
+}
+
+.description{
+    margin-top:0;
+}
+
+.article-actions{
+    border-top: 1px solid #eaeaea;
+    padding-top: 5px;
 }
 
 footer{
