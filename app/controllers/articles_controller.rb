@@ -28,6 +28,9 @@ class ArticlesController < ApplicationController
    #must whitelist the params to create a new article
    @art = Article.new(article_params)
    
+   #hard coding a user until authentication is added
+   @art.user = User.first
+   
    if @art.save
       flash[:success] = "Article was successfully created!"
       redirect_to article_path(@art)
