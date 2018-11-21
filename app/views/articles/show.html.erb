@@ -1,11 +1,23 @@
 <h2 align="center"><%= @art.title %></h2>
 
 <div class="col-md-8 offset-md-2">
-    <div class="card card-body bg-light">
+  <div class="card card-body bg-light">
+    <% if @art.user %>   
+        <ul class="listing">
+        <div class="row center">  
+          <div class="col-md-4 offset-md-4">  
+            <li> Created by:</li>
+            <li><%= link_to gravatar_for(@art.user), user_path(@art.user) %></li>
+            <li class="article-title"><%= link_to @art.user.username, user_path(@art.user) %></li>
+            <li><small><%= pluralize(@art.user.articles.count,"article") if @art.user.articles %></small></li>
+          </div>
+        </div>
+        </ul>
+    <% end %>
         <h4 class="center description"><strong>Description: </strong></h4>
         <hr>
         <%= simple_format(@art.description) %>
-     
+        
         <div class="article-actions">
             <%= link_to "Edit this Article", edit_article_path(@art), class: "btn btn-xs btn-primary" %> 
             <%= link_to "Delete this Article", article_path(@art), method: :delete, data: {confirm:"Are you sure you want to delete this article?"}, class: "btn btn-xs btn-danger" %> 
