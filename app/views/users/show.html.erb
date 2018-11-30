@@ -9,4 +9,6 @@
 
 <h4 align="center"><%= @user.username%>'s articles</h4>
 
+<%= will_paginate @user_articles, renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer %>
+
 <%= render 'articles/article',obj: @user.articles %>

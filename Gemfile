@@ -17,7 +17,8 @@ gem 'uglifier', '>= 1.3.0'
 
 #bcrypt for has_secure_password
 gem 'bcrypt','~>3.1.7'
-
+gem 'will_paginate','3.1.5'
+gem 'bootstrap-will_paginate','1.0.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
