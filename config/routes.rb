@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :articles # creates CRUD routes 
   resources :users, except: :new #creates CRUD routes except the custom new route
   
+  
   root 'pages#home'
   get 'about', to: 'pages#about'
   get 'signup', to: 'users#new'
@@ -11,5 +12,6 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   
+  resources :categories, except: [:destroy]
   
 end
