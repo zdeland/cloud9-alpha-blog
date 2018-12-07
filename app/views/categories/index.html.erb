@@ -1,5 +1,6 @@
 <h2 align="center">Listing All  Categories</h2>
 <div align="center">
+  <%= will_paginate @categories, renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer %>
     <% @categories.each do |category|%>
       <ul class="listing">
           <div class="row">
@@ -11,4 +12,5 @@
           </div>
       </ul>
     <% end %>
+  <%= will_paginate @categories, renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer %>
 </div>
