@@ -16,6 +16,14 @@
         </div>
       </div>
       <div class="form-group row">
+        <label for="category" class="col-sm-2 col-form-label"><%= f.label :description  %></label>
+        <div class="col-sm-5">
+          <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb|   %>
+            <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class:"checkbox") + cb.text} %>
+          <% end %>
+        </div>
+      </div>
+      <div class="form-group row">
         <div class="col-sm-2 offset-md-2">
           <%= f.submit class:"btn btn-primary btn-lg", Placeholder: "Description of Article"  %>
         </div>
